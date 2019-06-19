@@ -1,0 +1,61 @@
+IITK Summer of Code (SoC) Project :
+
+Team Details :
+--------------
+
+Team Name : SoC PANDAVAS
+Team Members -
+1.Ishanh Misra (180313)
+2.Yash Vardhan Raizada (180890)
+3.Dibyojyoti Sinha (180244)
+4.Aditya Dikshit (180035)
+5.Shubham Gupta (180748)
+
+PROJECT INFORMATION/DETAILS :
+-----------------------------
+
+BACK-END :
+
+Framework used : Django (Python) as Application Server
+Web Server : Heroku / Apache (Most probably Heroku)
+Database : SQLite (relational DBMS) / MongoDB (non-relational DBMS)
+
+FRONT-END :
+
+Basic HTML/CSS/JAVASCRIPT/BOOTSTRAP/JQUERY etc. (for designing website structure and adding Dynamics) 
+No React/React-Native etc.
+
+App Type :
+
+Basically WEB-App running on PCs & Laptops (or any device running Web Browsers eg.Chrome/Mozilla Firefox etc.)
+If needed will convert to Progressive Web App (PWA) for Mobile/Tablet devices
+No Android Studio/Flutter etc.
+
+Abstract :
+//////////
+Our Project is a derived version/inspired from the Problem Statement aspiring for the Aqua App (TM).
+But with some added functionalities and "not being an Android app" we do not follow the actual structuring/idea of the original app.
+
+We are aiming to develop an app for Agriculture sector/Agro industries.
+The aim of the app is to manage the supply and distribution of water & fertilizers to farms in India and some other facilities.
+It will first of all maintain a Datbase of all its customers (farmers) as well as operators who control the app to serve the customer + an Admin's Login.
+The features available to all of these will vary in the app as they Login into the server/Database.
+The app aims to analyze the quality of land/type of weather/type of crop/nutrients in soil etc. and then recommend the best fertilizers and adequate quantity of water.
+The analyzation part can be done by a Surveyor who goes with his equipments and conducts tests/measures land size etc. and creates an ID for farmers and feeds the data in the Database.
+The app will also be able to control the supply of water and will calculate the bill accordingly.
+We also aim to develop and connect IoT devices (or atleast form a miniature model) to Water Supply motors etc. which can be controlled from the app.
+
+Apart from this we have some additional functionalities like :
+Developing a recommendation system based on weather/sunlight and data from the Database to predict the type of crop best to be grown in that condition/season.
+Also we will have a mobile messaging as well as notification system telling farmers about Daily Weather updates/Market prices of the crops they grow/etc.
+We also aim to have a blog station where experts write about informed ways of farming and recommending crops that require less but fetch more money etc.
+The farmers can even declare the crops and the prices at which they want to sell on their portals by themselves or by contacting their regional managers (of App) etc.
+
+<Add some more...>
+///////////
+
+App-Features :
+<Add>
+
+Modules/Add_Ons/Sub_Apps :
+<Add>
