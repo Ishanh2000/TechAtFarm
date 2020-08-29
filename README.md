@@ -1,21 +1,8 @@
 # TechAtFarm
-Water supply and fertilizer recommendation system
+Water supply and fertilizer recommendation system.
+[Link to live demo](http://ec2-3-19-142-1.us-east-2.compute.amazonaws.com/dbms/)
 
-#### App-type:
-  - Web application.
-  - Conversion to Progressive Web App (PWA) for mobile/tablet devices if required.
-  - Android Studio / Flutter not yet involved.
-
-#### Backend:
-  - Framework: Django 2 (Python) application server
-  - Database : SQLite (relational DBMS - Django's default)
-
-#### Frontend:
-  - HTML/CSS/Bootstrap and JavaScript/jQuery (although template based).
-  - Not using React (JS/Native) yet.
-
-#### Deployment:
-  - Web Server: Amazon Web Services
+## About
 
 #### Overview:
   This project is inspired by the problem statement given by the Aqua App (TM). However, we do not follow the actual structure of the original app. Thus, some functionalities have been added.
@@ -40,7 +27,26 @@ Water supply and fertilizer recommendation system
 #### Project Outline:
 https://docs.google.com/document/d/1X-7tY8D8jl82GbZbgbnCYqHKnwGCr8rn5XT41gr71PQ/edit
 
-#### Installation
+## Technologies
+
+#### App-type:
+  - Web application.
+  - Conversion to Progressive Web App (PWA) for mobile/tablet devices if required.
+  - Android Studio / Flutter not yet involved.
+
+#### Backend:
+  - Framework: Django 2 (Python) application server
+  - Database : SQLite (relational DBMS - Django's default)
+
+#### Frontend:
+  - HTML/CSS/Bootstrap and JavaScript/jQuery (although template based).
+  - Not using React (JS/Native) yet.
+
+#### Deployment:
+  - Web Server: Amazon Web Services
+
+
+## Installation
 
 Installing the dependencies and starting the server.
   - git
@@ -71,6 +77,11 @@ $ python3 manage.py runserver 0.0.0.0:$PORT
 
 Check if your site is online by typing IP address of your instance in the browser address bar.
 
+## Other
+  - This project was developed during the Summer of Code (SoC) 2019 at IIT Kanpur as a part of a competition.
+  - The team secured the first position in this competition.
+  - [SoC 2019](https://soc.cse.iitk.ac.in) was hosted by the CSE dept. of IIT Kanpur and sponsored by Nutanix and UPSIDC.
+
 #### Team Name: SoC PANDAVAS
 
 #### Team Members:
@@ -78,12 +89,7 @@ Check if your site is online by typing IP address of your instance in the browse
   - Dibyojyoti Sinha ([DibyojyotiS](https://github.com/DibyojyotiS))
   - Ishanh Misra ([Ishanh2000](https://github.com/Ishanh2000))
   - Shubham Gupta ([shubhamgupta1313](https://github.com/shubhamgupta1313))
-  - Yash Vardhan Raizada ([yashvardhanraizada](https://github.com/yashvardhanraizada))
-
-#### Side Note:
-  - This project was developed during the Summer of Code (SoC) 2019 at IIT Kanpur as a part of a competition.
-  - The team secured the first position in this competition.
-  - [SoC 2019](https://soc.cse.iitk.ac.in) was hosted by the CSE dept. of IIT Kanpur and sponsored by Nutanix and UPSIDC.
+  - Yash Vardhan Raizada ([yashvardhanraizada](https://github.com/yashvardhanraizada))  
 
 #### TODO:
   - Update "Modules / Add-ons / Sub-apps" and "Project Outline" sections.
