@@ -1,6 +1,6 @@
 # TechAtFarm
 Water supply and fertilizer recommendation system.
-[Link to live demo](http://ec2-3-19-142-1.us-east-2.compute.amazonaws.com/dbms/{:target="blank"})
+[Link to live demo](http://ec2-3-19-142-1.us-east-2.compute.amazonaws.com/dbms/){:target="_blank"}
 
 ## About
 
