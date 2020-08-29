@@ -1,0 +1,1140 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!--lang="zxx"-->
+
+<head>
+	<title>TechAtFarm</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+	<!-- css files -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+	<!-- Bootstrap-css -->
+	<link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css" media="all" />
+	<!-- Style-css -->
+	<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+	<!-- Font-Awesome-Icons-css -->
+	<link href="{% static 'css/popuo-box.css'%}" rel="stylesheet" type="text/css" media="all" />
+	<!-- Popup css (for Video Popup) -->
+	<link rel="stylesheet" href="{% static 'css/lightbox.css'%}" type="text/css" media="all">
+	<!-- Lightbox css (for Projects) -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css'%}" type="text/css" media="screen" property="" />
+	<!-- Flexslider css (for Testimonials) -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Economica:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+		rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Rasa:300,400,500,600,700" rel="stylesheet">
+	<!-- //web-fonts -->
+	<link rel="icon" href="{% static 'images/fav.ico' %}">
+</head>
+
+<body>
+
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+		} 
+	</script>
+
+	<script type="text/javascript"
+		src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+	<div class="main-agile">
+		<!-- banner -->
+		<div class="agile-top">
+			<div class="col-xs-4 logo">
+				<h1>
+					<a href="/dbms/">
+						<span>T</span>ech
+						<span>A</span>t
+						<span>F</span>arm</a>
+				</h1>
+			</div>
+
+			<div class="col-xs-6 header-w3l">
+				<ul>
+					<li>
+						<a href="/dbms/farmerSearch/">
+							<span class="fa fa-search" aria-hidden="true"></span> FarmerSearch </a>
+					</li>
+					<li>
+						<a href="#" data-toggle="modal" data-target="#myModal1" id="login">
+							<span class="fa fa-unlock-alt" aria-hidden="true"></span> Login </a>
+					</li>
+					<li>
+						<a href="#" data-toggle="modal" data-target="#myModal2" id="signup">
+							<span class="fa fa-pencil-square-o" aria-hidden="true"></span> Sign Up </a>
+					</li>
+				</ul>
+			</div>
+			<!-- navigation -->
+			<div class="col-xs-2 menu">
+				<a href="" id="menuToggle">
+					<span class="navClosed"></span>
+				</a>
+				<nav>
+					<a href="#home" class="scroll">Home</a>
+					<a href="#about" class="scroll">About Us</a>
+					<a href="#ourpartners" class="scroll">Our Partners</a>
+					<a href="#developers" class="scroll">Developers</a>
+					<a href="#services" class="scroll">Our Services</a>
+					<a href="/dbms/farmerSearch/">FarmerSearch</a>
+					<a href="#blogs" class="scroll">Blogs</a>
+					<a href="#contact" class="scroll">Contact Us</a>
+				</nav>
+				<div id="google_translate_element" align="right"></div>
+			</div>
+			<!-- //navigation -->
+		</div>
+
+
+	</div>
+	<!-- signin Model -->
+	<!-- Modal1 -->
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body modal-body-sub_agile">
+					<div class="main-mailposi">
+						<span class="fa fa-envelope-o" aria-hidden="true"></span>
+					</div>
+					<div class="modal_body_left modal_body_left1">
+						<h3 class="agileinfo_sign">Login </h3>
+						<p>
+							Login now, Let's start with TechFarm.<br /> Don't have an account?
+							<a href="#" data-toggle="modal" data-target="#myModal2">
+								Sign Up Now</a>
+						</p>
+						<form action="/dbms/login/" method="post">
+							{% csrf_token %}
+							<div class="styled-input agile-styled-input-top">
+								<input type="text" placeholder="User Name" name="user_name" required=""
+									value="{{username}}"><br>
+								<p style="color: red">{{username_status}}</p>
+							</div>
+							<div class="styled-input">
+								<input type="password" placeholder="Password" name="password" required=""><br>
+								<p style="color: red">{{pwd_status}}</p>
+							</div>
+							<input type="submit" value="Login">
+						</form>
+						<p>
+							<a href="/dbms/">Clear Data and Refresh the page</a>
+						</p>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!-- //Modal content-->
+		</div>
+	</div>
+	<!-- //Modal1 -->
+	<!-- //signin Model -->
+	<!-- signup Model -->
+	<!-- Modal2 -->
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body modal-body-sub_agile">
+					<div class="main-mailposi">
+						<span class="fa fa-envelope-o" aria-hidden="true"></span>
+					</div>
+					<div class="modal_body_left modal_body_left1">
+						<h3 class="agileinfo_sign">Sign Up</h3>
+						<form action="/dbms/submit/" method="POST">
+							{% csrf_token %}
+							<div class="styled-input agile-styled-input-top">
+								<input type="text" placeholder="Name" value="{{data.name}}" name="name" required="">
+							</div>
+							<div class="styled-input">
+								<input type="text" placeholder="Residential Addresss" value="{{data.residence}}"
+									name="residence" required="">
+							</div>
+							<div class="styled-input">
+								<input type="text" placeholder="Mobile No." name="mobile_number"
+									value="{{data.mobile_number}}" required="" maxlength="10" minlength="10">
+							</div>
+							<div class="styled-input">
+								<input type="text" placeholder="Aadhar No." value="{{data.aadhar}}" name="aadhar"
+									required="" maxlength="12" minlength="12">
+							</div>
+							<div class="styled-input">
+								<input type="text" placeholder="Username" value="{{data.user_name}}" name="user_name"
+									required=""><br>
+								<p style="color: red">{{username_status}}</p>
+							</div>
+							<div class="styled-input">
+								<input type="password" placeholder="Password" value="" name="password" id="password"
+									required="">
+							</div>
+							<div class="styled-input">
+								<input type="password" placeholder="Confirm Password" value="" name="confirm_password"
+									id="confirm_password" required=""><br>
+								<p style="color: red">{{pwd_status}}</p>
+							</div>
+							<input type="submit" value="Sign Up">
+						</form>
+						<p>
+							<a href="/dbms/">Clear Data and Refresh the page</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- //Modal content-->
+		</div>
+	</div>
+	<!-- //Modal2 -->
+	<!-- //signup Model -->
+
+	<!--signup_success modal-->
+	<a href="#" data-toggle="modal" data-target="#myModal3" id="signup_success"></a>
+	<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body modal-body-sub_agile">
+					<div class="main-mailposi">
+						<span class="fa fa-envelope-o" aria-hidden="true"></span>
+					</div>
+					<div class="modal_body_left modal_body_left1">
+						<p>
+							<h3 class="agileinfo_sign"> {{signup_status}}</h3>
+							<center>
+								<p>
+									{{success.name}} {{message}}
+								</p>
+							</center>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- //Modal content-->
+		</div>
+	</div>
+	<!--end signup_success modal-->
+	<!-- banner-text -->
+	<div class="slider" id="home">
+		<div class="callbacks_container">
+			<ul class="rslides callbacks callbacks1" id="slider4">
+				<li>
+					<div class="w3layouts-banner-top banner">
+						<div class="container">
+							<div class="agileits-banner-info">
+								<h3>Save The World</h3>
+								<p>Save the trees
+									<i class="fa fa-tree" aria-hidden="true"></i> they will save you</p>
+								<div class="video-pop-wthree">
+									<a href="#small-dialog1" class="view play-icon popup-with-zoom-anim ">
+										<i class="fa fa-play-circle" aria-hidden="true"></i>Watch Our Video to
+										know techfarm</a>
+									<div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
+										<iframe src="https://player.vimeo.com/video/19251347"></iframe>
+									</div>
+								</div>
+								<div class="thim-click-to-bottom">
+									<a href="#about" class="scroll">
+										<i class="fa  fa-chevron-down"></i>
+									</a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="w3layouts-banner-top banner-2">
+						<div class="container">
+							<div class="agileits-banner-info">
+								<h3>Plant Trees Now</h3>
+								<p>Save the trees
+									<i class="fa fa-tree" aria-hidden="true"></i> they will save you</p>
+								<div class="video-pop-wthree">
+									<a href="#small-dialog2" class="view play-icon popup-with-zoom-anim ">
+										<i class="fa fa-play-circle" aria-hidden="true"></i>Watch Our Video to know
+										techfarm</a>
+									<div id="small-dialog2" class="mfp-hide w3ls_small_dialog wthree_pop">
+										<iframe src="https://player.vimeo.com/video/19251347"></iframe>
+									</div>
+								</div>
+								<div class="thim-click-to-bottom">
+									<a href="#about" class="scroll">
+										<i class="fa  fa-chevron-down"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="w3layouts-banner-top banner-3">
+						<div class="container">
+							<div class="agileits-banner-info">
+								<h3>Save our Planet</h3>
+								<p>Save the trees
+									<i class="fa fa-tree" aria-hidden="true"></i> they will save you</p>
+								<div class="video-pop-wthree">
+									<a href="#small-dialog3" class="view play-icon popup-with-zoom-anim ">
+										<i class="fa fa-play-circle" aria-hidden="true"></i>Watch Our Video to know
+										techfarm</a>
+									<div id="small-dialog3" class="mfp-hide w3ls_small_dialog wthree_pop">
+										<iframe src="https://player.vimeo.com/video/19251347"></iframe>
+									</div>
+								</div>
+								<div class="thim-click-to-bottom">
+									<a href="#about" class="scroll">
+										<i class="fa  fa-chevron-down"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="clearfix"> </div>
+		<!-- //banner-text -->
+	</div>
+	<!-- //banner -->
+
+	<!-- about -->
+	<div class="banner-bottom-w3l" id="about">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>W</span>elcome
+				</h3>
+				<div class="tittle-style">
+				</div>
+				<p>"We are an organisation which helps the agricultural community to help them
+					with timings of  their basic requirements (irrigation, etc)."
+				</p>
+			</div>
+			<div class="welcome-sub-wthree">
+				<div class="col-md-5 banner_bottom_left">
+					<h4>About
+						<span>TechAtFarm</span>
+					</h4>
+					<p>We are an organisation which helps the agricultural communities (NGOs/Firms) in providing farmers with modern facilities like Automated Irrigation (through Wi-Fi sensors), Farmer Search portal for listing their crops for SALE, Crop Search recommending farmers about seasons, pesticides, fertilizers etc., BlogSpot featuring articles on new techniques by our experts. It creates suitable database for farmers which helps them with adding their lands and make requests for irrigation facility etc. on their Dashboard.</p>
+				</div>
+				<!-- Stats-->
+				<div class="col-md-7 stats-info-agile">
+					<div class="w3l-right-stats">
+						<div class="stats-grid stat-border">
+							<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='768'
+								data-delay='.5' data-increment="1">768</div>
+							<p>Farmers Associated</p>
+						</div>
+						<div class="stats-grid">
+							<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='678'
+								data-delay='.5' data-increment="1">678</div>
+							<p>NGOs</p>
+						</div>
+						<div class="stats-grid stat-border border-st2">
+							<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='800'
+								data-delay='.5' data-increment="1">800</div>
+							<p>Likes</p>
+						</div>
+					</div>
+				</div>
+				<!-- //Stats -->
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //about -->
+
+	<!-- video section -->
+	<div class="video-w3l" data-vide-bg='{% static "video/3"%}'>
+		<h5>Save Water</h5>
+		<a href="#small-dialog4" class="play-icon popup-with-zoom-anim ">
+			<i class="fa fa-play-circle-o" aria-hidden="true"></i>
+		</a>
+		<div id="small-dialog4" class="mfp-hide w3ls_small_dialog wthree_pop">
+			<iframe src="https://player.vimeo.com/video/19251347"></iframe>
+		</div>
+	</div>
+	<!-- //video section -->
+
+	<!-- services -->
+	<div class="agileits-services" id="ourpartners">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>O</span>ur
+					<span>P</span>artners
+				</h3>
+				<div class="tittle-style">
+				</div>
+			</div>
+			<div class="agileits-services-row">
+				<div class="col-md-4 col-xs-6 agileits-services-grids">
+					<div class="col-xs-3 wthree-ser">
+						<img src="{% static 'images/s1.png' %}" alt="" style="height:68px; width:68px;">
+					</div>
+					<div class="col-xs-9 wthree-heading">
+						<h4>Nutanix</h4>
+					</div>
+					<div class="clearfix"></div>
+					<p>"Nutanix is a cloud computing software company that sells what it calls hyper-converged infrastructure appliances and software-defined storage. "</p>
+					<br>
+					<a target="_blank" href="https://www.nutanix.com/en" class="w3-buttons">Nutanix</a>
+				</div>
+				<div class="col-md-4 col-xs-6 agileits-services-grids">
+					<div class="col-xs-3 wthree-ser">
+					<img src="{% static 'images/s2.jpeg' %}" alt="" style="height:68px; width:68px;">
+					</div>
+					<div class="col-xs-9 wthree-heading">
+						<h4>UPSIDC</h4>
+					</div>
+					<div class="clearfix"></div>
+					<p>"Uttar Pradesh State Industrial Development Corporation is a Public Sector Undertaking of the Government of Uttar Pradesh, which promotes industries and develops industrial infrastructure in the State. "</p>
+					<a target="_blank" href="http://www.onlineupsidc.com/"  class="w3-buttons">UPSIDC</a>
+				</div>
+				<div class="col-md-4 col-xs-6 agileits-services-grids">
+					<div class="col-xs-3 wthree-ser">
+					<img src="{% static 'images/s3.jpeg' %}" alt="" style="height:78px; width:78px;">
+					</div>
+					<div class="col-xs-9 wthree-heading">
+						<h4>FarmVeda</h4>
+					</div>
+					<div class="clearfix"></div>
+					<p>"Farmveda is owned by the Farmers of India. Natural, nutritious, preservative free, traditional and homemade taste of Millets, products, Instant mixes and ready to eat items." </p>
+					<br><a target="_blank" href="https://www.farmveda.in/"  class="w3-buttons">FarmVeda</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="agileits-services-row-2">
+				<div class="col-md-4 col-xs-6 agileits-services-grids">
+					<div class="col-xs-3 wthree-ser">
+						<img src="{% static 'images/s4.png' %}" alt="" style="height:68px; width:68px;">
+					</div>
+					<div class="col-xs-9 wthree-heading">
+						<h4>Medallion</h4>
+					</div>
+					<div class="clearfix"></div>
+					<p>"With over a decade of in healthcare management, Medallion Healthcare is delighted to be part of this exciting transformation, with unprecedented business opportunities and new market dynamics across the globe. Medallion, came into being in 2007, as a consulting initiative, to set up one of the biggest multinational private hospital chains in India."</p>
+					<a target="_blank" href="http://www.medallion.in/contact-us" class="w3-buttons">Medallion</a>
+				</div>
+				<div class="col-md-4 col-xs-6 agileits-services-grids">
+					<div class="col-xs-3 wthree-ser">
+						<img src="{% static 'images/s5.png' %}" alt="" style="height:68px; width:68px;">
+					</div>
+					<div class="col-xs-9 wthree-heading">
+						<h4>Vitraag Vigyaan</h4>
+					</div>
+					<div class="clearfix"></div>
+					<p>"The Vision and Mission of the Centre is to research, practice, achieve and spread awareness of the philosophy and science of Self-realisation (Aatma Gyan) and the functioning of the Universe, which leads to Eternal Peace or Mukti, i.e. liberation from bondages."</p>
+					<br><br><a target="_blank"href="https://vitraagvigyaan.org/" class="w3-buttons">Vitraag Vigyaan</a>
+				</div>
+				<div class="col-md-4 col-xs-6 agileits-services-grids">
+					<div class="col-xs-3 wthree-ser">
+					<img src="{% static 'images/s6.png' %}" alt="" style="height:68px; width:68px;">
+					</div>
+					<div class="col-xs-9 wthree-heading">
+						<h4>IIT Kanpur</h4>
+					</div>
+					<div class="clearfix"></div>
+					<p>"ndian Institute of Technology Kanpur (also known as IIT Kanpur or IITK) is a public engineering institution located in Kanpur, Uttar Pradesh. It was declared to be an Institute of National Importance by the Government of India under the Institutes of Technology Act."</p>
+					<br><br><br><a href="https://www.iitk.ac.in/"class="w3-buttons">IIT Kanpur`</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //services -->
+
+	<!-- developers -->
+	<div class="team" id="developers">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>M</span>eet <span>O</span>ur <span>D</span>evelopers
+				</h3>
+				<div class="tittle-style">
+				</div>
+			</div>
+
+			<div style="margin-left:15%;" class="agileits-team-grids">
+				
+					<div class="col-sm-2 col-xs-6 agileits-team-grid">
+						<div class="team-info">
+							<img src="{% static 'images/t1.jpeg' %}" alt="">
+							<div class="team-caption">
+								<h4 style="font-size:16px";>Ishanh &nbsp&nbspMisra</h4>
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/ishanh.misra">
+											<i class="fa fa-facebook"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-instagram"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-6 agileits-team-grid">
+						<div class="team-info">
+							<img src="{% static 'images/t6.jpeg' %}" alt="">
+							<div class="team-caption">
+								<h4 style="font-size:16px;">Yash Vardhan Raizada </h4>
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/yashvardhan.raizada.5">
+											<i class="fa fa-facebook"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-instagram"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-6 agileits-team-grid">
+						<div class="team-info">
+							<img src="{% static 'images/t3.jpeg' %}" alt="">
+							<div class="team-caption">
+								<h4 style="font-size:16px;">Dibyojyoti Sinha</h4>
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/dibyojyoti.sinha.1">
+											<i class="fa fa-facebook"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-instagram"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-6 agileits-team-grid">
+						<div class="team-info">
+							<img src="{% static 'images/t4.jpeg' %}" alt="">
+							<div class="team-caption">
+								<h4 style="font-size:16px;">Aditya Dikshit</h4>
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/aditya.dikshit.75">
+											<i class="fa fa-facebook"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-instagram"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-6 agileits-team-grid">
+						<div class="team-info">
+							<img src="{% static 'images/t5.jpeg' %}" alt="">
+							<div class="team-caption">
+								<h4 style="font-size:16px;">Shubham Gupta</h4>
+								<ul>
+									<li>
+										<a href="https://www.facebook.com/profile.php?id=100004117548066">
+											<i class="fa fa-facebook"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-instagram"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				
+				<div class="clearfix"> </div>
+			</div>
+
+
+		</div>
+	</div>
+	<!-- //developers -->
+	<!-- experts section -->
+	<div class="what-w3ls" id="services">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>W</span>e are expert in
+				</h3>
+				<div class="tittle-style">
+				</div>
+			</div>
+			<div class="what-grids">
+				<div class="col-md-6 what-grid">
+				<br><br><br><br><br><br>
+
+					<img  src="{% static 'images/work.png' %}" class="img-responsive" alt="" height="100px;"/>
+				</div>
+				<div class="col-md-6 what-grid1">
+					<div class="what-top">
+						<div class="what-left">
+							<i class="fa fa-tint" aria-hidden="true"></i>
+						</div>
+						<div class="what-right">
+							<h4>Automated Irrigation</h4>
+							<p>We provide automated systems to farms connected by Wi-Fi/other means to our databases and
+								sensors which perform regular moisture tests and irrigate the land as per requirements
+								of
+								your Crops.
+							</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="what-top1">
+						<div class="what-left">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</div>
+						<div class="what-right">
+							<h4>Farmer Search</h4>
+							<p>A facility to Food Processing Industries and businesses which need to acquire crops at
+								suitable
+								prices from farmers registered in our Database. Just search by crop name and get
+								contacts of
+								farmers along with their quoted prices and acquire crops directly from them without
+								involving
+								the middlemen.
+							</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="what-top1">
+						<div class="what-left">
+							<i class="fa fa-edit" aria-hidden="true"></i>
+						</div>
+						<div class="what-right">
+							<h4>BlogSpot </h4>
+							<p>BlogSpot is a wonder destination for farmers to look into every day to get insights about
+								how to improve their farming practices and what new farming technologies are in trend
+								these
+								days.</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="what-top1">
+						<div class="what-left">
+							<i class="fa fa-leaf" aria-hidden="true"></i>
+						</div>
+						<div class="what-right">
+							<h4>Crop Search</h4>
+							<p>
+								Crop search is a facility for registered users to get recommendations by our experts on
+								moisture requirements of different crops, suitable temperature range, pesticides,
+								fertilizers
+								etc. just by typing in the crop name
+							</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //experts section -->
+
+	<!-- projects -->
+	<div class="gallery-agile" id="blogs">
+		<!-- testimonials -->
+		<div class="testimonials">
+			<div class="container">
+				<div class="title-div">
+					<h3 class="tittle">
+						<span>B</span>log <span>S</span>pot
+					</h3>
+					<div class="tittle-style">
+					</div>
+				</div>
+				<div class="col-md-6 testimonials-main">
+					<section class="slider">
+						<div class="flexslider">
+							<ul class="slides">
+								{% if blogs %}
+								{% for blog in blogs %}
+								<li>
+									<div class="inner-testimonials-w3ls">
+										<div style="width: 50%; float: left">
+										
+										
+											<p><b style="font-size:30px; color:green;">BLOG :</b></p>
+											<p style="color:black;">{{blog.blog_data}}</p>
+										</div>
+										<div class="testimonial-info-wthree" style="width: 50%; float:right; padding-top:0px;">
+											<h3 style="font-size:40px;"><strong>{{blog.blog_heading}}</strong></h3>
+											<span>{{blog.blogger_name}} ({{blog.blogger_email}})</span>
+											<p class="para-w3-agileits" style="color:black;">{{blog.blogger_description}}</p>
+											<p class="para-w3-agileits" style="font-size:20px;"><strong>Read More on Link/Website :</strong></p>
+											<p class="para-w3-agileits"><a
+													href="{{blog.blog_link}}">{{blog.blog_link}}</a></p>
+											<p class="para-w3-agileits" style="font-size:20px;"><b>Blog Description :</b></p>
+											<p class="para-w3-agileits" style="color:black;">{{blog.blog_description}}</p>
+										</div>
+									</div>
+								</li>
+								{% endfor %}
+								{% else %}
+								<p>No Blogs are available !</p>
+								{% endif %}
+								<!--
+								<li>
+									<div class="inner-testimonials-w3ls">
+										<img src="{% static 'images/tt2.jpg' %}" alt=" " class="img-responsive" />
+										<div class="testimonial-info-wthree">
+											<h5>Theresa Zoe</h5>
+											<span>Sed ut perspiciatis</span>
+											<p class="para-w3-agileits">Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="inner-testimonials-w3ls">
+										<img src="{% static 'images/tt3.jpg' %}" alt=" " class="img-responsive" />
+										<div class="testimonial-info-wthree">
+											<h5>Kevin Matt</h5>
+											<span>Sed ut perspiciatis</span>
+											<p class="para-w3-agileits">Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+										</div>
+									</div>
+								</li>-->
+							</ul>
+						</div>
+					</section>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<!-- //testimonials -->
+
+	</div>
+	<!-- //projects -->
+
+
+	<!-- contact -->
+	<div class="contact" id="contact">
+		<div class="title-div">
+			<h3 class="tittle">
+				<span>C</span>ontact Us
+			</h3>
+			<div class="tittle-style">
+			</div>
+		</div>
+		<div class="col-md-6 map">
+			<iframe
+				src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJcb6oxAE3nDkRNoTDq4Do-zo&key=AIzaSyAhl9u3GRwKUmLysk9nGPojPO_3jF78_rY"></iframe>
+		</div>
+		<div class="col-md-6 contact_grids_info">
+			<h5 class="small-title">Visit Us</h5>
+			<div class="col-xs-4 contact_grid">
+				<div class="contact_grid_right">
+					<h4> OFFICE 1</h4>
+					<p>Room No : C326 Hall-3</p>
+					<p>IIT Kanpur, 208016</p>
+				</div>
+				<div class="address-row">
+					<h5>Mail Us</h5>
+					<p>
+						<a href="mailto:yashvr@iitk.ac.in"> yashvr@iitk.ac.in </a>
+					</p>
+				</div>
+				<div class="address-row">
+					<h5>Call Us</h5>
+					<p>+91 8400558577</p>
+				</div>
+			</div>
+			<div class="col-xs-4 contact_grid">
+				<div class="contact_grid_right">
+					<h4> OFFICE 2</h4>
+					<p>Room No : A205 Hall-2</p>
+					<p>IIT Kanpur, 208016</p>
+				</div>
+				<div class="address-row">
+					<h5>Mail Us</h5>
+					<p>
+						<a href="mailto:aditya@iitk.ac.in"> aditya@iitk.ac.in </a>
+					</p>
+				</div>
+				<div class="address-row">
+					<h5>Call Us</h5>
+					<p>+91 9794505227</p>
+				</div>
+			</div>
+			<div class="col-xs-4 contact_grid">
+				<div class="contact_grid_right">
+					<h4>OFFICE 3</h4>
+					<p>Room No: C114 HAll-3</p>
+					<p>IIT Kanpur, 208016</p>
+				</div>
+				<div class="address-row">
+					<h5>Mail Us</h5>
+					<p>
+						<a href="mailto:dibyojyoti@iitk.ac.in"> dibyojyoti@iitk.ac.in </a>
+					</p>
+				</div>
+				<div class="address-row">
+					<h5>Call Us</h5>
+					<p>+91 70169 61469</p>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<div class="second-contact-agile">
+		<div class="col-md-6 form-bg">
+			<form action="/dbms/message/" method="post" onsubmit="sent()">
+				{% csrf_token %}
+				<div class="contact-fields">
+					<input type="text" name="Name" placeholder="Name" required="" maxlength="30">
+				</div>
+				<div class="contact-fields">
+					<input type="text" name="Mobile" placeholder="Mobile Number" required="" maxlength="10"
+						minlength="10">
+				</div>
+				<div class="contact-fields">
+					<input type="text" name="Subject" placeholder="Subject" required="" maxlength="30">
+				</div>
+				<div class="contact-fields">
+					<textarea name="Message" placeholder="Message/Complaint" required=""></textarea>
+				</div>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+		<div class="col-md-6 address-left-second">
+			<div class="address-grid">
+				<h5 class="small-title">Contact Info</h5>
+				<div class="address-grids">
+					<span class="fa fa-volume-control-phone" aria-hidden="true"></span>
+					<div class="contact-right">
+						<p>Contact </p>
+						<span>+91 8400558577</span>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="address-grids">
+					<span class="fa fa-envelope-o" aria-hidden="true"></span>
+					<div class="contact-right">
+						<p>Mail </p>
+						<a href="mailto:admins@techatfarm.com">admins@techatfarm.com</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="address-grids">
+					<span class="fa fa-map-marker" aria-hidden="true"></span>
+					<div class="contact-right">
+						<p>Location</p>
+						<span>RM101 Department of Computer Science & Engineering<br>
+							Indian Institute of Technology Kanpur (208016) INDIA</span>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="address-grids">
+					<span class="fa fa-calendar" aria-hidden="true"></span>
+					<div class="contact-right">
+						<p>Working Hours</p>
+						<span>Mon - Fri : 10:00 am to 10:00 pm</span>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!-- //contact -->
+
+	<!-- footer -->
+	<div class="footer-bot">
+		<div class="w3layouts-newsletter">
+			<div class="w3ls-social-icons-2">
+				<h3>Connect With Us</h3>
+				<a class="facebook" href="http://fb.com/techatfarm">
+					<i class="fa fa-facebook"></i>
+				</a>
+				<a class="instagram" href="http://instagram.com/techatfarm">
+					<i class="fa fa-instagram"></i>
+				</a>
+				<a class="linkedin" href="#">
+					<i class="fa fa-linkedin"></i>
+				</a>
+			</div>
+
+			<div class="clearfix"> </div>
+		</div>
+		<div class="container">
+			<div class="col-xs-3 logo2">
+				<h2>
+					<a href="/dbms/">
+						<span>T</span>ech
+						<span>A</span>t
+						<span>F</span>arm</a>
+				</h2>
+			</div>
+			<div class="col-xs-9 ftr-menu">
+				<ul>
+					<li>
+						<a href="#home" class="scroll">Home</a>
+					</li>
+					<li>
+						<a class="scroll" href="#about">About</a>
+					</li>
+					<li>
+						<a class="scroll" href="#ourpartners">Our Partners</a>
+					</li>
+					<li>
+						<a class="scroll" href="#developers">Developers</a>
+					</li>
+					<li>
+						<a class="scroll" href="#services">Our Services</a>
+					</li>
+					<li>
+						<a href="/dbms/farmerSearch/">FarmerSearch</a>
+					</li>
+					<li>
+						<a class="scroll" href="#blogs">Blogs</a>
+					</li>
+					<li>
+						<a class="scroll" href="#contact">Contact Us</a>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+			<div class="copy-right">
+				<p> &copy; 2019 TechAtFarm. All Rights Reserved |
+					<a href="http://iitk.ac.in"> Designed by SoC PANDAVAS</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+
+
+	<!-- js-scripts -->
+
+	<!-- jquery -->
+	<script src="{% static 'js/jquery-2.1.4.min.js'%}"></script>
+	<!-- //jquery -->
+
+	<script src="{% static 'js/bootstrap.js'%}"></script>
+	<!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+	<!--  light box js -->
+	<script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
+	<!-- //light box js-->
+
+	<!-- stats numscroller-js-file -->
+	<script src="{% static 'js/numscroller-1.0.js'%}"></script>
+	<!-- //stats numscroller-js-file -->
+
+	<!-- Baneer-js -->
+	<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			// Slideshow 4
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: false,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+	<!-- //Baneer-js -->
+
+	<!-- navigation -->
+	<script>
+		(function ($) {
+			// Menu Functions
+			$(document).ready(function () {
+				$('#menuToggle').click(function (e) {
+					var $parent = $(this).parent('.menu');
+					$parent.toggleClass("open");
+					var navState = $parent.hasClass('open') ? "hide" : "show";
+					$(this).attr("title", navState + " navigation");
+					// Set the timeout to the animation length in the CSS.
+					setTimeout(function () {
+						console.log("timeout set");
+						$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+					}, 200);
+					e.preventDefault();
+				});
+			});
+		})(jQuery);
+	</script>
+	<!-- //navigation -->
+
+	<!-- pop-up(for video popup)-->
+	<script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+	<script>
+		$(document).ready(function () {
+			$('.popup-with-zoom-anim').magnificPopup({
+				type: 'inline',
+				fixedContentPos: false,
+				fixedBgPos: true,
+				overflowY: 'auto',
+				closeBtnInside: true,
+				preloader: false,
+				midClick: true,
+				removalDelay: 300,
+				mainClass: 'my-mfp-zoom-in'
+			});
+
+		});
+	</script>
+	<!-- //pop-up-box (syllabus section video)-->
+
+	<!-- video js (background) -->
+	<script src="{% static 'js/jquery.vide.min.js' %}"></script>
+	<!-- //video js (background) -->
+
+	<!-- smoothscroll -->
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<!-- //smoothscroll -->
+
+	<!-- password-script -->
+	<script>
+		window.onload = function () {
+			document.getElementById("password1").onchange = validatePassword;
+			document.getElementById("password2").onchange = validatePassword;
+		}
+
+		function validatePassword() {
+			var pass2 = document.getElementById("password2").value;
+			var pass1 = document.getElementById("password1").value;
+			if (pass1 != pass2)
+				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+			else
+				document.getElementById("password2").setCustomValidity('');
+			//empty string means no validation error
+		}
+	</script>
+	<!-- //password-script -->
+
+	<!-- start-smooth-scrolling -->
+	<script src="{% static 'js/move-top.js' %}"></script>
+	<script src="{% static 'js/easing.js' %}"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smooth-scrolling -->
+
+	<!-- smooth scrolling-bottom-to-top -->
+	<script>
+		$(document).ready(function () {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+	<!-- //smooth scrolling-bottom-to-top -->
+
+	<!-- flexSlider (for testimonials) -->
+	<script defer src="{% static 'js/jquery.flexslider.js' %}"></script>
+	<script>
+		$(window).load(function () {
+			$('.flexslider').flexslider({
+				animation: "slide",
+				start: function (slider) {
+					$('body').removeClass('loading');
+				}
+			});
+		});
+	</script>
+	<script>
+		{% if username_status == 'Username DOES NOT EXIST!' %}
+		document.getElementById("login").click();
+		{% endif %}
+		{% if pwd_status == 'INCORRECT PASSWORD!' %}
+		document.getElementById("login").click();
+		{% endif %}
+
+		{% if username_status == 'USERNAME ALREADY EXISTS ! TRY SOMETHING ELSE...' %}
+		document.getElementById("signup").click();
+		{% endif %}
+		{% if pwd_status == 'PASSWORDS DO NOT MATCH' %}
+		document.getElementById("signup").click();
+		{% endif %}
+
+		{% if signup_status == 'Successfull' %}
+		document.getElementById("signup_success").click();
+		{% endif %}
+
+	</script>
+	<script>
+		function sent() {
+			alert("Message Sent");
+		}
+	</script>
+	<!-- //flexSlider (for testimonials) -->
+
+	<!-- //js-scripts -->
+
+</body>
+
+</html>

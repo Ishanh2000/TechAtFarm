@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+.button {
+background-color: blue;
+border: none;
+color: white;
+padding: 16px 32px;
+text-align: center;
+font-size: 16px;
+margin: 4px 2px;
+opacity: 0.6;
+transition: 0.3s;
+display: inline-block;
+text-decoration: none;
+cursor: pointer;
+}
+table {
+border-collapse: collapse;
+width: 100%;
+}
+
+th, td {
+text-align: left;
+padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+background-color: #4CAF50;
+color: white;
+}
+.button:hover {opacity: 1}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700|Philosopher:700&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+      <div id="google_translate_element"></div>
+
+      <script type="text/javascript">
+          function googleTranslateElementInit() {
+              new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+          }
+      </script>
+
+      <script type="text/javascript"
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<h2 style="color:green; font-size:3rem; font-family: 'Montserrat Subrayada', sans-serif";>Tech At Farm's Farmer Search </h2>
+<h3 style="letter-spacing:1px;">Search by crop name and get contacts of our registered farmers along with their Price Quotations !</h3>
+<form action="/dbms/">
+    <input type="submit" value="Back to HomePage" class="button">
+</form>
+<hr style="border:solid 5px; border-color:green;">
+<h2 style="font-size:2rem;font-family:'Philosopher', sans-serif;">Search Farmers Registered with Us ! :</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Type Crop Name ..." title="Type in a name">
+<p><button class="button" onclick="sortTable()">Sort By Price</button></p>
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:10%;">Farmer's Name</th>
+    <th style="width:10%;">Farmer's Residence</th>
+    <th style="width:10%;">Mobile Number</th>
+    <th style="width:10%;">Crop Name</th>
+    <th style="width:10%;">Land Address</th>
+    <th style="width:10%;">Expected Yield (Quintals)</th>
+    <th style="width:10%;">Expected Price (INR/Quintal)</th>
+  </tr>
+  {% for land in lands %}
+  <tr>
+      <td>{{land.user_name.name}}</td>
+      <td>{{land.user_name.residence}}</td>
+      <td>{{land.user_name.mobile_number}}</td>
+      <td>{{land.crop_grown}}</td>
+      <td>{{land.land_address}}</td>
+      {% if land.expected_yield == 0.0 %}
+      <td>Not Declared</td>
+      {% else %}
+      <td>{{land.expected_yield}}</td>
+      {% endif %}
+      {% if land.expected_price == 0.0 %}
+      <td>Not Declared</td>
+      {% else %}
+      <td>{{land.expected_price}}</td>
+      {% endif %}
+  </tr>
+  {% endfor %}
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[6].innerHTML;
+      y = rows[i + 1].getElementsByTagName("TD")[6].innerHTML;
+      if(x == 'Not Declared') x = '1000000';
+      if(y == 'Not Declared') y = '1000000';
+      //check if the two rows should switch place:
+      if (Number(x) > Number(y)) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+</script>
+
+</body>
+</html>

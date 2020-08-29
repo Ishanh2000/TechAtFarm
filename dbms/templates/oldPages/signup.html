@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SignUp Failed</title>
+</head>
+
+<body>
+    <form action = "/dbms/">
+        <input type = "submit" value = "Back to HomePage">            
+    </form>
+    <br>
+    <h1 style="color: red">SignUp Failed</h1>
+    <h3>Edit the required details in our HTML SignUp Kiosk</h3>
+    <h3>All Field Are Required & Compulsory to Fill</h3>
+    <form action="/dbms/submit/" method="POST">
+        {% csrf_token %}
+        <table>
+        <tr><td> Name </td><td><input type="text" value="{{ data.name }}" name="name" required/></td></tr>
+        <tr><td> Residence Address </td><td><input type="text" value="{{ data.residence }}" name="residence" required/></td></tr>
+        <tr><td> Mobile Number </td><td><input type="text" value="{{ data.mobile_number }}" name="mobile_number" required maxlength="10"/></td></tr>
+        <tr><td> Aadhar Card Number </td><td><input type="text" value="{{ data.aadhar }}" name="aadhar" required maxlength="12"/></td></tr>
+        <tr><td> Create  User Name </td><td><input type="text" value="{{ data.user_name }}" name="user_name" required/></td>
+        <td style = "color: red">{{ username_status }}</td></tr>
+        <tr><td> Create Password </td><td><input type="password" value="" name="password" required/></td></tr>
+        <tr><td> Confirm Password </td><td><input type="password" value="" name="confirm_password" required/></td>
+        <td style = "color: red">{{ pwd_status }}</td></tr>
+        </table>
+        <input type="submit" value="SignUp"/>
+    </form>
+    
+</body>
+
+</html>

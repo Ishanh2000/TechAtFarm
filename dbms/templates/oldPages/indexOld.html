@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>DBMS</title>
+    </head>
+    <body>
+        <center>
+            <h1>Welcome to TechAtFarm DBMS</h1>
+            <h2>What you want to do ?</h2>
+            <form action = "/dbms/signup/">
+                <input type = "submit" value = "SignUp">            
+            </form>
+            <form action = "/dbms/login/">
+                <input type = "submit" value = "Login">            
+            </form>
+        </center>
+        <h2>TechAtFarm's FarmerSearch :</h2>
+        <h3>Search by crop name and get contacts of our registered farmers along with their Price Quotations !</h3>
+        <form action = "/dbms/farmerSearch/">
+            <input type = "submit" value = "Search Farmers">           
+        </form>
+        <br>
+        <h2>TechAtFarm BlogSPOT !</h2>
+        <h3>Blogs & Articles for you by our Experts ...</h3>
+        <ol>
+            {% if blogs %}
+                {% for blog in blogs %}
+                <li>
+                    <table border = "1" width = "100%">
+                        <tr>
+                            <th colspan="2" align="left">{{blog.blog_heading}}</th>
+                        </tr>
+                        <tr>
+                            <th width = "10%" align = "left">Blog Description</th>
+                            <th width = "90%" align = "left">{{blog.blog_description}}</th>
+                        </tr>
+                        <tr>
+                            <th width = "10%" align = "left">Blogger's Name</th>
+                            <th width = "90%" align = "left">{{blog.blogger_name}}</th>
+                        </tr>
+                        <tr>
+                            <th width = "10%" align = "left">Blogger's Description</th>
+                            <th width = "90%" align = "left">{{blog.blogger_description}}</th>
+                        </tr>
+                        <tr>
+                            <th width = "10%" align = "left">Blogger's E-Mail</th>
+                            <th width = "90%" align = "left"><a href= "mailto : {{blog.blogger_email}}">{{blog.blogger_email}}</a></th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" align="left">URL/Website/Important Link :</th>
+                        </tr>
+                        <tr>
+                            <th width = "10%" align = "left">{{blog.blog_link_heading}}</th>
+                            <th width = "90%" align = "left"><a href = "{{blog.blog_link}}">{{blog.blog_link}}</a></th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" align="left">Blog :</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="justify" width = "100%"><p>{{blog.blog_data}}</p></td>
+                        </tr>
+                    </table>
+                    <br>
+                </li>
+                {% endfor %}
+            {% else %}
+                <p>No Blogs are available !</p>
+            {% endif %}
+        </ol>
+    </body>
+</html>
