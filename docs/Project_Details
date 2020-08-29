@@ -1,61 +1,54 @@
-IITK Summer of Code (SoC) Project :
+TechAtFarm
+  Water supply and fertilizer recommendation system
 
-Team Details :
---------------
+App-type:
+  Web application.
+  Conversion to Progressive Web App (PWA) for mobile/tablet devices if required.
+  Android Studio / Flutter not yet involved.
 
-Team Name : SoC PANDAVAS
-Team Members -
-1.Ishanh Misra (180313)
-2.Yash Vardhan Raizada (180890)
-3.Dibyojyoti Sinha (180244)
-4.Aditya Dikshit (180035)
-5.Shubham Gupta (180748)
+Backend:
+  Framework: Django 2 (Python) application server
+  Database : SQLite (relational DBMS - Django's default)
 
-PROJECT INFORMATION/DETAILS :
------------------------------
+Frontend:
+  HTML/CSS/Bootstrap and JavaScript/jQuery (although template based).
+  Not using React (JS/Native) yet.
 
-BACK-END :
+Deployment:
+  Web Server: Amazon Web Services
 
-Framework used : Django (Python) as Application Server
-Web Server : Heroku / Apache (Most probably Heroku)
-Database : SQLite (relational DBMS) / MongoDB (non-relational DBMS)
+Overview:
+  This project is inspired by the problem statement given by the Aqua App (TM). However, we do not follow the actual structure of the original app. Thus, some functionalities have been added.
 
-FRONT-END :
+  We aim to develop an app for agricultural sector, capable of managing water (+ fertilizers) supply and distributing it to farms / other facilities of India.
+  It maintains a datbase of customers (farmers) and operators who control the app to serve the customer. An admin's login is also provided.
+  The features available to different user types will vary as they login with their credentials.
+  The app analyzes the land quality, weather, crop type(s), soil nutrients, humidity, moisture, etc. and recommends the best fertilizers and adequate water quantity.
+  The analysis can be done by a surveyor who goes with his equipments and conducts tests and measurements of land size etc., creates an ID for farmers and feeds the data to the database.
+  The app also controls the water supply and calculates the bill accordingly.
+  This requires development and integration of IoT (Internet of Things) devices with the app and the motors supplying water.
 
-Basic HTML/CSS/JAVASCRIPT/BOOTSTRAP/JQUERY etc. (for designing website structure and adding Dynamics) 
-No React/React-Native etc.
+Additional Functionalities:
+  A recommendation system based on climate (sunlight, rainfall, humidity, etc.) data to predict the best crop type(s) suitable for the season.
+  A mobile messaging and notification system telling farmers about daily weather updates and market prices of the crops they grow.
+  A blog section where experts write about informed methods of farming and recommending practices that require less investment and generate more revenue.
+  The farmers can even declare the crops and the prices at which they want to sell upon login, either by themselves or by seeking help of the regional app managers.
 
-App Type :
+Modules / Add-ons / Sub-apps:
+  To be announced soon.
 
-Basically WEB-App running on PCs & Laptops (or any device running Web Browsers eg.Chrome/Mozilla Firefox etc.)
-If needed will convert to Progressive Web App (PWA) for Mobile/Tablet devices
-No Android Studio/Flutter etc.
+Project Outline: https://docs.google.com/document/d/1X-7tY8D8jl82GbZbgbnCYqHKnwGCr8rn5XT41gr71PQ/edit
 
-Abstract :
-//////////
-Our Project is a derived version/inspired from the Problem Statement aspiring for the Aqua App (TM).
-But with some added functionalities and "not being an Android app" we do not follow the actual structuring/idea of the original app.
+Team Name: SoC PANDAVAS
 
-We are aiming to develop an app for Agriculture sector/Agro industries.
-The aim of the app is to manage the supply and distribution of water & fertilizers to farms in India and some other facilities.
-It will first of all maintain a Datbase of all its customers (farmers) as well as operators who control the app to serve the customer + an Admin's Login.
-The features available to all of these will vary in the app as they Login into the server/Database.
-The app aims to analyze the quality of land/type of weather/type of crop/nutrients in soil etc. and then recommend the best fertilizers and adequate quantity of water.
-The analyzation part can be done by a Surveyor who goes with his equipments and conducts tests/measures land size etc. and creates an ID for farmers and feeds the data in the Database.
-The app will also be able to control the supply of water and will calculate the bill accordingly.
-We also aim to develop and connect IoT devices (or atleast form a miniature model) to Water Supply motors etc. which can be controlled from the app.
+Team Members:
+  1) Aditya Dikshit (imdikshit)
+  2) Dibyojyoti Sinha (DibyojyotiS)
+  3) Ishanh Misra (Ishanh2000)
+  4) Shubham Gupta (shubhamgupta1313)
+  5) Yash Vardhan Raizada (yashvardhanraizada)
 
-Apart from this we have some additional functionalities like :
-Developing a recommendation system based on weather/sunlight and data from the Database to predict the type of crop best to be grown in that condition/season.
-Also we will have a mobile messaging as well as notification system telling farmers about Daily Weather updates/Market prices of the crops they grow/etc.
-We also aim to have a blog station where experts write about informed ways of farming and recommending crops that require less but fetch more money etc.
-The farmers can even declare the crops and the prices at which they want to sell on their portals by themselves or by contacting their regional managers (of App) etc.
-
-<Add some more...>
-///////////
-
-App-Features :
-<Add>
-
-Modules/Add_Ons/Sub_Apps :
-<Add>
+Side Note:
+  This project was developed during the Summer of Code (SoC) 2019 at IIT Kanpur as a part of a competition.
+  The team secured the first position in this competition.
+  SoC 2019 was hosted by the CSE dept. of IIT Kanpur and sponsored by Nutanix and UPSIDC.
