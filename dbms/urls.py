@@ -17,4 +17,5 @@ urlpatterns = [
     path('farmerSearch/', views.farmerSearch, name = 'farmerSearch'),
     path('message/', views.message, name = 'message'),
     path('device/', views.device, name = 'device'),
+    path('dashboard/edit/', views.edit_land, name = 'edit_land'),
 ]

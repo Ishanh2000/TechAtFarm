@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,12 +72,13 @@ color: white;
 </style>
 <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700|Philosopher:700&display=swap" rel="stylesheet">
 
-
+<title>Farmer Search</title>
+<link rel="icon" href="{% static 'images/fav.ico' %}">
 
 </head>
 <body>
 
-      <div id="google_translate_element"></div>
+      <div id="google_translate_element" align="right"></div>
 
       <script type="text/javascript">
           function googleTranslateElementInit() {

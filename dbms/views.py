@@ -178,6 +178,7 @@ def delete_land(request):
 def device(request):
     # expected from device
     # http://localhost/dbms/device/?device_call=true&user_name=yashvr&password=yash2018&land_name=Sonalika&land_address=136+Block+C+Shyam+Nagar&district=Kanpur&public_ip=9.22.3.6&date_time=2019-07-07+17:37:00.000000&average_moisture=89
+    # GET /device/?device_call=true&user_name=yashvr&password=yash2018&land_name=Sonalika&land_address=136+Block+C+Shyam+Nagar&district=Kanpur&public_ip=14.139.38.200&date_time=2019-07-10+03:32:06.332990&average_moisture=11 HTTP/1.1"
     if (request.method == 'GET') and ('device_call' in request.GET) and (request.GET['device_call'] == 'true') and ('user_name' in request.GET):
         try:
             farmer = Data.objects.get(pk = request.GET['user_name'])
@@ -194,3 +195,27 @@ def device(request):
             return HttpResponse('failure')
     else:
         return HttpResponseRedirect('/dbms/')
+
+def edit_land(request):
+    if request.method == 'POST':
+        data = request.POST.dict()
+        user_name = loggedin_farmer.user_name
+        land_name = data.get('land_name')
+        land_address = data.get('land_address')
+        district = data.get('district')
+
+        new_soil_type = data.get('soil_type')
+        new_crop_grown = data.get('crop_grown')
+        new_moisture_requirement = data.get('moisture_requirement')
+        new_threshold_moisture = data.get('threshold_moisture')
+        new_expected_yield = data.get('expected_yield')
+        new_expected_price = data.get('expected_price')
+        for land in Land.objects.filter(user_name = user_name, land_name=land_name, land_address=land_address, district=district):
+            land.soil_type = new_soil_type
+            land.crop_grown = new_crop_grown
+            land.moisture_requirement = new_moisture_requirement
+            land.threshold_moisture = new_threshold_moisture
+            land.expected_yield = new_expected_yield
+            land.expected_price = new_expected_price
+            land.save()
+        return HttpResponseRedirect('/dbms/dashboard/')
